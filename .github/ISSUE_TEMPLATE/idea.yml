@@ -1,0 +1,40 @@
+name: 功能建议
+description: 希望它多一个能力，或者某个地方用起来别扭
+title: "[Idea] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先说清楚你要解决的是哪个问题，比直接给方案更有用——很多时候有更轻的做法。
+        也请记得这个产品的边界：**只读**。编辑、保存、双栏实时预览这类建议不会被采纳，这是设计前提不是遗漏。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么
+      description: 现在做什么事情的时候别扭、慢、或者做不到？
+      placeholder: 每天要在三个文档之间跳，每次都得回目录点一次
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你设想的做法（可选）
+      placeholder: 顶栏放最近打开过的几个文档
+    validations:
+      required: false
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 现在怎么绕过去的（可选）
+      description: 这条最有价值——说明问题真的存在，也能避免我加一个本来就够用的功能。
+      placeholder: 现在只能用「最近文件」，但它只有十个，而且顺序不固定
+    validations:
+      required: false
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 确认
+      options:
+        - label: 这个建议不会改变「只读、离线、不收集数据」的前提下也能做
+          required: false

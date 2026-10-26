@@ -1,1 +1,73 @@
-
+name: 报告问题
+description: 软件没按预期工作、崩溃、渲染不对、窗口行为奇怪
+title: "[Bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提之前先搜一下已有 issue，并确认你用的是最新版（主页更新日志能看版本号）。
+        **不要粘贴私人文档内容和文件路径**，用最小的例子复现即可。
+  - type: textarea
+    id: what
+    attributes:
+      label: 一句话说明
+      description: 发生了什么，用一句人话说清楚。
+      placeholder: 打开带 Mermaid 的文档时，图表区域是空白
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本号
+      description: 主页更新日志或安装包属性里能看到。
+      placeholder: "0.12.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 系统
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS 14 及以上
+        - macOS 12–13
+        - 其他（写在下面）
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 新建 a.md，内容是一段 mermaid 代码块
+        2. 双击打开
+        3. 图表位置是空白
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望 vs 实际
+      placeholder: |
+        期望：显示流程图
+        实际：空白方块，没有报错
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息（可选）
+      description: 多窗口 / 贴边 / 置顶这类问题，说明当时开了几个窗口、有没有贴边，比截图更有用。截图也可以直接拖进来。
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我用的是最新版本
+          required: true
+        - label: 我已经搜过已有 issue
+          required: false
